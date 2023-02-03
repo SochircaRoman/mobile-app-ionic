@@ -25,7 +25,6 @@ export default {
   },
   computed: {
     loadedMemory() {
-      console.log(this.memoryId);
       return this.$store.getters.memory(this.memoryId);
     }
   },
