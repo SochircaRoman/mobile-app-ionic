@@ -34,30 +34,11 @@ export default {
     IonThumbnail,
     IonLabel,
   },
-  data() {
-    return {
-      memories: [
-        {
-          id: 1,
-          image: "/assets/icon/icon.png",
-          title: "Title nr.1",
-          description: "This is a short description nr.1"
-        },
-        {
-          id: 2,
-          image: "/assets/icon/icon.png",
-          title: "Title nr.2",
-          description: "This is a short description nr.2"
-        },
-        {
-          id: 3,
-          image: "/assets/icon/icon.png",
-          title: "Title nr.3",
-          description: "This is a short description nr.3"
-        },
-      ]
-    };
-  },
+  computed: {
+    memories() {
+      return this.$store.getters.memories;
+    }
+  }
 }
 </script>
 
