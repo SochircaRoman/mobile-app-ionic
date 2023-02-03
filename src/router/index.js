@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import MemoriesPage from '../pages/MemoriesPage.vue';
-import MemoryDetails from '../pages/MemoryDetails.vue';
+import MemoryDetails from '../pages/MemoryDetailsPage.vue';
 
 const routes = [
   {

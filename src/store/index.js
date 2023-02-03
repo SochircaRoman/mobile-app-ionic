@@ -31,7 +31,7 @@ const store = createStore({
     },
     memory(state) {
       return (memoryId) => {
-        return state.memories.find(memory => memory.id === memoryId);
+        return state.memories.find((memory) => memory.id === memoryId);
       };
     }
   }
