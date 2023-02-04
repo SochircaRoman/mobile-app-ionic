@@ -32,7 +32,5 @@ export default {
 </script>
 
 <style>
-ion-icon {
-  background: white;
-}
+
 </style>
