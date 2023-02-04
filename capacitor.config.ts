@@ -1,9 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'mobile-app-ionic',
-  webDir: 'dist',
+  appId: 'roman.sochirca.0105',
+  appName: 'ionic-vue-mobile-app',
+  webDir: 'public',
   bundledWebRuntime: false
 };
 
