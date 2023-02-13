@@ -22,6 +22,7 @@
 import { IonHeader, IonSearchbar, IonToolbar, IonItem, IonList } from '@ionic/vue';
 
 export default {
+  props: ["titles"],
   components: {
     IonHeader,
     IonSearchbar,
@@ -31,7 +32,7 @@ export default {
   },
   data() {
     return {
-      data: ['Amsterdam', 'Buenos Aires', 'Cairo', 'Geneva'],
+      data: this.titles,
       results: [],
     }
   },
