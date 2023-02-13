@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-
 import TabBar from '../components/UI/TabBar.vue';
 
 const routes = [
@@ -29,7 +28,7 @@ const routes = [
       },
       {
         path: 'search',
-        component: () => import('../pages/MemoryDetailsPage.vue'),
+        component: () => import('../components/UI/SearchBar.vue'),
       },
     ]
   },
