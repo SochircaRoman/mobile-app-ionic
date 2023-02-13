@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import MemoriesPage from '../pages/MemoriesPage.vue';
-import MemoryDetails from '../pages/MemoryDetailsPage.vue';
-import AddMemoryPage from '../pages/AddMemoryPage.vue';
+
+import TabBar from '../components/UI/TabBar.vue';
 
 const routes = [
   {
@@ -9,22 +8,36 @@ const routes = [
     redirect: '/home'
   },
   {
-    path: '/memories',
-    component: MemoriesPage
-  },
-  {
-    path: '/memories/:id',
-    component: MemoryDetails
-  },
-  {
-    path: '/memories/add',
-    component: AddMemoryPage
+    path: '/',
+    component: TabBar,
+    children: [
+      {
+        path: '',
+        redirect: '/home',
+      },
+      {
+        path: 'home',
+        component: () => import('../pages/HomePage.vue'),
+      },
+      {
+        path: 'memories',
+        component: () => import('../pages/MemoriesPage.vue')
+      },
+      {
+        path: 'addOutline',
+        component: () => import('../pages/AddMemoryPage.vue'),
+      },
+      {
+        path: 'search',
+        component: () => import('../pages/MemoryDetailsPage.vue'),
+      },
+    ]
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 })
 
-export default router
+export default router;
