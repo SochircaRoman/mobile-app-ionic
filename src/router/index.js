@@ -28,7 +28,7 @@ const routes = [
       },
       {
         path: 'search',
-        component: () => import('../components/UI/SearchBar.vue'),
+        component: () => import('../pages/SearchPage.vue'),
       },
     ]
   },
