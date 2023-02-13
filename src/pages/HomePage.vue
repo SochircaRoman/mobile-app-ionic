@@ -1,15 +1,36 @@
 <template>
-  <div>
-
-  </div>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Home page</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="example-content">Home page</div>
+    </ion-content>
+  </ion-page>
 </template>
 
 <script>
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage } from '@ionic/vue';
+
 export default {
-  
+  components: {
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonPage
+  },
 }
 </script>
 
-<style>
+<style scoped>
+.example-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
 </style>
