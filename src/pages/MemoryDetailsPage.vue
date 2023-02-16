@@ -1,5 +1,5 @@
 <template>
-  <base-layout :page-title="loadedMemory ? loadedMemory.title : 'Loading...'" page-default-back-link="/memories">
+  <base-layout pageDefaultBackLink="/memories" :page-title="loadedMemory ? loadedMemory.title : 'Loading...'">
     <h2 v-if="!loadedMemory">Could not find a memory for this id</h2>
     <memory-overview
       v-else
@@ -16,7 +16,7 @@ import MemoryOverview from '../components/memories/MemoryOverview.vue';
 
 export default {
   components: {
-    MemoryOverview,
+    MemoryOverview
   },
   data() {
     return {
@@ -27,12 +27,7 @@ export default {
     loadedMemory() {
       return this.$store.getters.memory(this.memoryId);
     }
-  },
-  //watch: {
-    //$route(currentRoute) {
-      //this.memoryId = currentRoute.params.id;
-    //}
-  //}
+  }
 };
 </script>
 

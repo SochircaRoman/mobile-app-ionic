@@ -1,9 +1,11 @@
 <template>
-  <ion-item :router-link="`/memories/${memory.id}`">
+  <ion-item :router-link="`/memories/${memory.id}`" button detail="true">
     <ion-thumbnail slot="start">
       <ion-img :src="memory.image" :alt="memory.title"></ion-img>
     </ion-thumbnail>
-    <ion-label>{{ memory.title }}</ion-label>
+    <ion-label>
+      <h3>{{ memory.title }}</h3>
+    </ion-label>
   </ion-item>
 </template>
 

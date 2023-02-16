@@ -14,7 +14,7 @@
           <ion-label>Memories</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="addOutline" href="/addOutline">
+        <ion-tab-button tab="add" href="/add">
           <ion-icon :icon="addOutline" />
           <ion-label>Add</ion-label>
         </ion-tab-button>

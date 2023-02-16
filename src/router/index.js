@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import TabBar from '../components/UI/TabBar.vue';
+import MemoryDetailsPage from '../pages/MemoryDetailsPage.vue';
 
 const routes = [
   {
@@ -23,7 +24,7 @@ const routes = [
         component: () => import('../pages/MemoriesPage.vue')
       },
       {
-        path: 'addOutline',
+        path: 'add',
         component: () => import('../pages/AddMemoryPage.vue'),
       },
       {
@@ -31,6 +32,10 @@ const routes = [
         component: () => import('../pages/SearchPage.vue'),
       },
     ]
+  },
+  {
+    path: '/memories/:id',
+    component: MemoryDetailsPage
   },
 ]
 
