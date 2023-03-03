@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import TabBar from '../components/UI/TabBar.vue';
 import MemoriesPage from '../pages/MemoriesPage.vue';
+import AuthPage from '../pages/AuthPage.vue';
+import LoginPage from '../pages/LoginPage.vue';
 import RegisterPage from '../pages/RegisterPage.vue';
 
 const routes = [
@@ -37,6 +39,14 @@ const routes = [
   {
     path: '/memories/:id',
     component: MemoriesPage
+  },
+  {
+    path: '/auth',
+    component: AuthPage
+  },
+  {
+    path: '/login',
+    component: LoginPage
   },
   {
     path: '/register',
