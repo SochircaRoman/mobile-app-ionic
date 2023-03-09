@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonButtons, IonItem, IonBackButton, IonLabel, IonRow, IonCol, IonInput,  } from '@ionic/vue';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonButtons, IonItem, IonBackButton, IonLabel, IonRow, IonCol, IonInput, } from '@ionic/vue';
 
 
 export default {

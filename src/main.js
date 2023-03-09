@@ -1,3 +1,4 @@
+//require("dotenv").config({path: ""});
 import { createApp } from 'vue';
 import App from './App.vue';
 import BaseLayout from './components/BaseLayout.vue';
@@ -26,11 +27,12 @@ import '@ionic/vue/css/display.css';
 import './theme/variables.css';
 import './theme/core.css';
 
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router)
   .use(store);
-  
+
 app.component('base-layout', BaseLayout);
 
 router.isReady().then(() => {
