@@ -4,7 +4,7 @@
 
     <ion-header>
       <ion-toolbar>
-        <ion-title>Ionic Form</ion-title>
+        <ion-title>Authorization</ion-title>
       </ion-toolbar>
     </ion-header>
 

@@ -10,14 +10,14 @@
   </ion-header>
 
   <ion-content>
-    <form>
+    <form @submit.prevent="handleLogin">
       <ion-item lines="full">
-        <ion-label position="floating">Username</ion-label>
-        <ion-input type="text" required></ion-input>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" :value="model.email" @ionInput="model.email = $event.target.value;" required></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" required></ion-input>
+        <ion-input type="password" :value="model.password" @ionInput="model.password = $event.target.value;" required></ion-input>
       </ion-item>
       <ion-row>
         <ion-col>
@@ -49,6 +49,44 @@ export default {
     IonLabel,
     IonInput,
   },
+  data: () => ({
+    model: {
+      email: '',
+      password: '',
+    },
+    loginStatus: false,
+    successful: false,
+    message: "",
+  }),
+  computed: {
+    loggedIn() {
+      return this.$store.state.authen.status.loggedIn;
+    }
+  },
+  created() {
+    if (this.loggedIn) {
+      this.$router.push("/home");
+    }
+  },
+  methods: {
+    handleLogin() {
+      const data = this.model;
+      const email = this.model.email;
+      const password = this.model.password;
+
+      this.$store.dispatch("authen/login", {data, email, password}).then(
+        () => {
+          this.loginStatus = true;
+          setTimeout(() => {
+            this.$router.push("/home");
+          }, 2000)
+        },
+        (error) => {
+          this.message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+        }
+      )
+    }
+  }
 }
 </script>
 
