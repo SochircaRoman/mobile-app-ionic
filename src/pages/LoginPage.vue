@@ -3,7 +3,7 @@
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-back-button href="/auth"></ion-back-button>
+        <ion-back-button default-href="/auth"></ion-back-button>
       </ion-buttons>
       <ion-title>Log In</ion-title>
     </ion-toolbar>
@@ -17,7 +17,7 @@
       </ion-item>
       <ion-item lines="full">
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" :value="model.password" @ionInput="model.password = $event.target.value;" required></ion-input>
+        <ion-input minlength="6" type="password" :value="model.password" @ionInput="model.password = $event.target.value;" required></ion-input>
       </ion-item>
       <ion-row>
         <ion-col>
@@ -25,6 +25,7 @@
           <a class="small-text">Forgot Password?</a>
         </ion-col>
       </ion-row>
+      <div v-if="message" class="error__message">{{ message }}</div>
     </form>
   </ion-content>
   
@@ -79,10 +80,12 @@ export default {
           this.loginStatus = true;
           setTimeout(() => {
             this.$router.push("/home");
+            this.$router.go();
           }, 2000)
         },
         (error) => {
           this.message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+          this.message = this.message.substring(9);
         }
       )
     }
@@ -91,6 +94,11 @@ export default {
 </script>
 
 <style>
+.error__message {
+  text-align: center;
+  color: #e77e7e;
+}
+
 .small-text {
   display: flex;
   justify-content: center;

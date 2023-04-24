@@ -44,6 +44,16 @@ export default {
     IonRow,
     IonCol,
   },
+  computed: {
+    currentUser() {
+      return this.$store.state.authen.status.loggedIn;
+    },
+  },
+  mounted () {
+    if (this.currentUser) {
+      this.$router.push("/home");
+    }
+  }
 }
 </script>
 
